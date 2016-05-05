@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  mount API => "/"
+  # mount Converter::Currency => '/api'
+  # mount API::User => '/api'
+  # mount API::Root => '/'
   devise_for :users
   resources :users
   resources :notes
