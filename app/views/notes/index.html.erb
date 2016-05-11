@@ -1,0 +1,21 @@
+
+<h2>Listing notes</h2>
+
+<div>
+  <p>Filename</p>
+  <div>
+    <% @notes.each do |note| %>
+      <ul>
+        <li>
+          <%= note.filename %>
+          <%= button_to 'Download', note, method: :get %>
+          <%= button_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Document', new_note_path %>
