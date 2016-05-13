@@ -13,7 +13,13 @@ class Note < ActiveRecord::Base
       self.file_contents = file.read
     end
   end
-
+  def content
+    if self.content_type.split("/")[0] == "text"
+      self.file_contents 
+    else
+      "can not display in text"
+    end
+  end
   private
     def sanitize_filename(filename)
       return File.basename(filename)

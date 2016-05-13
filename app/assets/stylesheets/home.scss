@@ -1,0 +1,35 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ *= require_self
+ *
+ */
+
+.search-container{
+    width: 400px;
+    margin: auto;
+}
+.note-list{
+    width: 300px;
+    display: inline-block;
+}
+.pluss-sign{
+    height: 50px;
+    position: absolute;
+    right: 200px;
+    top: 150px;
+}
+.add-note-text{
+    position: absolute;
+    right: 280px;
+    top: 155px;
+    font-size: 30px;
+}
+.note-content{
+    width: 800px;
+    display: inline-block;
+    height: 600px;
+    position: absolute;
+    left: 500px;
+}

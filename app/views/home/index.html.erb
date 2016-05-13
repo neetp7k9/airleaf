@@ -1,0 +1,61 @@
+<%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
+
+<h1>AirLeaf</h1>
+<p>Our Homepage</p>
+<div class="function-area">
+  <div class="search-container">
+    <form>
+      <label>search the Note here!</label>
+      <input type="text"/>
+      <input type="submit" value="search"/>
+    </form>
+  </div>
+  <div class="add-note-container">
+    <p class="add-note-text"> add your note </p>
+    <%= image_tag("pluss-sign.gif", class: "pluss-sign") %> 
+  </div> 
+</div>
+<hr>
+<div class="content-area">
+  <div class="note-list">
+  <p> popular note </p>
+    <ul class="list-group">
+    <% @notes.each do |note| %>
+     <li class="list-group-item">
+       <span class="badge"></span>
+       <%= note.topic %>
+     </li>
+    <% end%>
+   </ul> 
+  </div>
+<div class="note-content panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    Basic panel example  something load from note
+  </div>
+</div>
+
+</div>
+
+
+<div id="dialog-form" title="Create new Note">
+  <p class="validateTips">All form fields are required.</p>
+ 
+  <form>
+    <fieldset>
+      <label for="topic">Topic</label>
+      <input type="text" name="topic" id="topic" value="" class="text ui-widget-content ui-corner-all">
+      <label for="course">Course</label>
+      <input type="text" name="course" id="course" value="" class="text ui-widget-content ui-corner-all">
+      <label for="description">Description</label>
+      <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all">
+      <label for="note">Note</label>
+      <input type="file" name="file" id="file" value="" class="text ui-widget-content ui-corner-all">
+ 
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
